@@ -1,4 +1,6 @@
 Demo::Application.routes.draw do
+  resources :posts
+
   get "home/index"
 
   # The priority is based upon order of creation:
@@ -26,7 +28,9 @@ Demo::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-
+  resources :posts do
+    resources :comments
+  end
   # Sample resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
